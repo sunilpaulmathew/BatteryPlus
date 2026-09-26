@@ -69,4 +69,10 @@
     <string name="time_to_full_charge_summary">距离充满还剩约 %s</string>
     <string name="voltage">电压</string>
     <string name="voltage_summary">表示为设备硬件供电的电势差，单位为伏特（V）。电压会根据电池电量和系统负载自然上下波动，并直接从系统电池广播中读取。</string>
+    <string name="battery_low_threshold">低电量阈值</string>
+    <string name="battery_low_threshold_description">电池电量低于 %s 时提醒。点击此处进行修改。</string>
+    <string name="capacity_design_input_message">点击此处输入手机官方设计容量，单位为 mAh（通常可以在设备规格中找到）。</string>
+    <string name="capacity_design_input_title">电池设计容量（mAh）</string>
+    <string name="capacity_design_summary">当前电池可保持其原始设计容量的 %s</string>
+    <string name="tap_to_modify_status">点击修改当前值</string>
 </resources>
