@@ -28,11 +28,6 @@ public class Utils {
         }
     }
 
-    public static boolean isDarkTheme(Context context) {
-        int currentNightMode = context.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
-        return currentNightMode == Configuration.UI_MODE_NIGHT_YES;
-    }
-
     public static boolean isLandscape(Context context) {
         Configuration config = context.getResources().getConfiguration();
         return config.orientation == Configuration.ORIENTATION_LANDSCAPE;

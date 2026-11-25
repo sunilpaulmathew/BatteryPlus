@@ -34,7 +34,7 @@ public class XYPlot extends View {
     }
 
     private void init() {
-        int themeColor = Color.parseColor(Utils.isDarkTheme(getContext()) ? "#82B1FF" : "#2962FF");
+        int themeColor = Color.parseColor(Settings.isDarkTheme(getContext()) ? "#82B1FF" : "#2962FF");
 
         linePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         linePaint.setColor(themeColor);

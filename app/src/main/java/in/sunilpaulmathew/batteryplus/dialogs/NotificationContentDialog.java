@@ -12,6 +12,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import in.sunilpaulmathew.batteryplus.R;
 import in.sunilpaulmathew.batteryplus.services.BatteryMonitorService;
+import in.sunilpaulmathew.batteryplus.utils.Settings;
 import in.sunilpaulmathew.batteryplus.utils.Utils;
 
 /*
@@ -48,7 +49,7 @@ public class NotificationContentDialog extends MaterialAlertDialogBuilder {
         Drawable drawable = AppCompatResources.getDrawable(context, R.drawable.ic_tune);
         if (drawable != null) {
             drawable = DrawableCompat.wrap(drawable).mutate();
-            DrawableCompat.setTint(drawable, Color.parseColor(Utils.isDarkTheme(context) ? "#FFB74D" : "#EF6C00"));
+            DrawableCompat.setTint(drawable, Color.parseColor(Settings.isDarkTheme(context) ? "#FFB74D" : "#EF6C00"));
         }
         return drawable;
     }

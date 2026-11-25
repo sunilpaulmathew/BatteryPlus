@@ -211,7 +211,7 @@ public class Battery {
     }
 
     public static int getProgressColor(int percentValue, Context context) {
-        boolean dark = Utils.isDarkTheme(context);
+        boolean dark = Settings.isDarkTheme(context);
         String hexColor;
 
         if (percentValue <= 10) {

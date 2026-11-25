@@ -6,7 +6,7 @@ import android.graphics.Color;
 import java.io.Serializable;
 
 import in.sunilpaulmathew.batteryplus.R;
-import in.sunilpaulmathew.batteryplus.utils.Utils;
+import in.sunilpaulmathew.batteryplus.utils.Settings;
 
 /*
  * Created by sunilpaulmathew <sunil.kde@gmail.com> on September 07, 2026
@@ -74,13 +74,14 @@ public class SettingsEntry implements Serializable {
     }
 
     public int getIconColor(Context context) {
-        boolean dark = Utils.isDarkTheme(context);
+        boolean dark = Settings.isDarkTheme(context);
         String hexColor;
         if (this.icon == R.drawable.ic_notification) {
             hexColor = dark ? "#9FA8DA" : "#3F51B5";
         } else if (this.icon == R.drawable.ic_on_boot) {
             hexColor = dark ? "#81C784" : "#2E7D32";
-        } else if (this.icon == R.drawable.ic_github) {
+        } else if (this.icon == R.drawable.ic_github ||
+                this.icon == R.drawable.ic_theme) {
             hexColor = dark ? "#58A6FF" : "#0969DA";
         } else if (this.icon == R.drawable.ic_email) {
             hexColor = dark ? "#F48FB1" : "#C2185B";
@@ -90,6 +91,8 @@ public class SettingsEntry implements Serializable {
             hexColor = dark ? "#90A4AE" : "#455A64";
         } else if (this.icon == R.drawable.ic_battery_alert) {
             hexColor = dark ? "#F28B82" : "#C5221F";
+        } else if (this.icon == R.drawable.ic_amoled_theme) {
+            hexColor = dark ? "#FFB74D" : "#BF360C";
         } else if (this.icon == R.mipmap.ic_launcher) {
             return Integer.MIN_VALUE;
         } else {

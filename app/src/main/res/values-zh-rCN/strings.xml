@@ -2,6 +2,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
     <!-- Chines simplified (zh-hans) -->
 
+    <string name="app_theme">"应用主题"</string>
+    <string name="app_theme_amoled">"AMOLED 黑"</string>
+    <string name="app_theme_amoled_description">"节省电池并提供时尚、现代的外观"</string>
+    <string name="app_theme_auto">"自动"</string>
+    <string name="app_theme_dark">"深色"</string>
+    <string name="app_theme_light">"浅色"</string>
     <string name="apply">应用</string>
     <string name="battery_full_summary">请拔下充电器，以保护电池健康。</string>
     <string name="battery_full_title">电池已充满</string>
@@ -67,6 +73,7 @@
     <string name="temperature_summary">监测电池组的内部温度状态，以帮助防止过热并延长硬件使用寿命。该数值直接通过系统电池广播中的设备温度传感器获取。</string>
     <string name="time_to_empty_summary">距离下次充电还剩约 %s</string>
     <string name="time_to_full_charge_summary">距离充满还剩约 %s</string>
+    <string name="user_interface">"用户界面"</string>
     <string name="voltage">电压</string>
     <string name="voltage_summary">表示为设备硬件供电的电势差，单位为伏特（V）。电压会根据电池电量和系统负载自然上下波动，并直接从系统电池广播中读取。</string>
     <string name="battery_low_threshold">低电量阈值</string>

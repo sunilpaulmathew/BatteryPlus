@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 import in.sunilpaulmathew.batteryplus.R;
-import in.sunilpaulmathew.batteryplus.utils.Utils;
+import in.sunilpaulmathew.batteryplus.utils.Settings;
 
 /*
  * Created by sunilpaulmathew <sunil.kde@gmail.com> on Sept. 07, 2026
@@ -66,7 +66,7 @@ public class StatusEntry implements Serializable {
     }
 
     public int getIconColor(Context context) {
-        boolean dark = Utils.isDarkTheme(context);
+        boolean dark = Settings.isDarkTheme(context);
         String hexColor;
         if (this.iconRes == R.drawable.ic_clock) {
             hexColor = dark ? "#82B1FF" : "#2962FF";

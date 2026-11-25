@@ -1,6 +1,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation" >
     <string name="app_name" translatable="false">Battery Plus</string>
 
+    <string name="app_theme">App theme</string>
+    <string name="app_theme_amoled">Amoled black</string>
+    <string name="app_theme_amoled_description">Save battery and offer a sleek, modern look</string>
+    <string name="app_theme_auto">Auto</string>
+    <string name="app_theme_dark">Dark</string>
+    <string name="app_theme_light">Light</string>
     <string name="apply">Apply</string>
     <string name="battery_full_summary">Unplug your charger to preserve battery health.</string>
     <string name="battery_full_title">Battery Fully Charged</string>
@@ -73,6 +79,7 @@
     <string name="temperature_summary">Monitors the internal thermal state of the battery pack to help protect against overheating and preserve hardware lifespan. This value is pulled directly from the device\'s thermal sensors via system battery broadcast intents.</string>
     <string name="time_to_empty_summary">~%s left until next charge</string>
     <string name="time_to_full_charge_summary">~%s left until full charge</string>
+    <string name="user_interface">User interface</string>
     <string name="voltage">Voltage</string>
     <string name="voltage_summary">Indicates the electric potential difference powering your device\'s hardware, measured in volts (V). It naturally fluctuates up or down depending on the battery level and system load, and is read straight from system battery broadcasts.</string>
 </resources>
