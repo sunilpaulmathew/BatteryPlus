@@ -1,0 +1,1 @@
+Battery Plus: A clean, zero-overhead utility for real-time battery hardware metrics

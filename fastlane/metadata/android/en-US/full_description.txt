@@ -1,0 +1,18 @@
+<b>Battery Plus</b> is a clean, zero-overhead utility for real-time battery hardware metrics.
+
+<b>Requirements</b>
+
+- Android 8.0 (Oreo) or higher
+
+<b>Features</b>
+
+- Comprehensive Hardware Tracking: Monitor real-time Capacity (mAh), Voltage (V), Current (mA), Power (W), Temperature (°C), and Battery Percentage (%).
+- Live Custom Notifications: Keep tabs on your battery status directly from the notification bar. Fully customizable to display your preferred metrics, alongside intelligent low-battery warnings and 100% full-charge audio alerts.
+- Dynamic Custom XY Plotting: Features a custom hardware-accelerated view complete with auto-scaling Y-axes, dynamic unit formatting, smart time-based X-axis rendering, and smooth curve plotting.
+- Unified Timeline History: Seamlessly bridges charging and discharging cycles into a continuous, long-term performance graph.
+- Zero Bloat & High Performance: Maintains a strict rolling data cap with lightweight local persistence, ensuring zero UI lag and a negligible memory footprint.
+- Clean Adaptive Interface: An elegantly designed user interface with configurable dark and light themes.
+
+<b>Translations</b>
+
+Please help me to translate this application via <a href='https://poeditor.com/join/project/20PSoEAgfX'>POEditor</a>. You may also translate after downloading the original language string available <a href='https://gitlab.com/sunilpaulmathew/ashell/-/blob/master/app/src/main/res/values/strings.xml'>GitHub</a>.
