@@ -6,13 +6,19 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.BroadcastReceiver;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.ServiceInfo;
+import android.media.AudioAttributes;
+import android.net.Uri;
 import android.os.BatteryManager;
 import android.os.Build;
+import android.os.Handler;
 import android.os.IBinder;
+import android.os.Looper;
+import android.service.notification.StatusBarNotification;
 
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
@@ -30,7 +36,9 @@ import in.sunilpaulmathew.batteryplus.utils.Utils;
  */
 public class BatteryMonitorService extends Service {
 
+    private final Handler alertHandler = new Handler(Looper.getMainLooper());
     private NotificationManager notificationManager;
+    private Runnable repeatAlertRunnable;
     public static final String ACTION_UPDATE_PREFERENCES = "com.example.batteryplus.ACTION_UPDATE_PREFERENCES";
     public static final String ACTION_STOP_SERVICE = "com.example.batteryplus.ACTION_STOP_SERVICE";
     private static final String CHANNEL_ID_SILENT = "battery_status_silent_channel";
@@ -101,6 +109,7 @@ public class BatteryMonitorService extends Service {
 
     @Override
     public void onDestroy() {
+        stopRepeatingAlert();
         super.onDestroy();
         try {
             unregisterReceiver(batteryReceiver);
@@ -216,12 +225,22 @@ public class BatteryMonitorService extends Service {
         alertChannel.setDescription("Heads-up alert when monitoring is first enabled");
         alertChannel.setShowBadge(false);
 
+        Uri soundUri = Uri.parse(
+                ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + getPackageName() + "/" + R.raw.notification
+        );
+
+        AudioAttributes audioAttributes = new AudioAttributes.Builder()
+                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                .setUsage(AudioAttributes.USAGE_ALARM)
+                .build();
+
         NotificationChannel alertsChannel = new NotificationChannel(
                 CHANNEL_ID_CRITICAL_ALERTS,
                 "Battery Warnings & Alerts",
                 NotificationManager.IMPORTANCE_HIGH
         );
         alertsChannel.setDescription("Alerts for critical low battery and 100% full charge");
+        alertsChannel.setSound(soundUri, audioAttributes);
         alertsChannel.enableVibration(true);
 
         notificationManager.createNotificationChannel(silentChannel);
@@ -297,18 +316,14 @@ public class BatteryMonitorService extends Service {
     }
 
     private boolean handleFullBatteryAlert(int percent, boolean isPowerConnected, boolean isFullAlertSent) {
-        if (percent >= 100 && isPowerConnected) {
+        if (percent >= Battery.getHighBatteryThreshold(this) && isPowerConnected) {
             if (!isFullAlertSent) {
-                postAlertNotification(
-                        NOTIFICATION_ID_FULL,
-                        R.drawable.ic_battery_full,
-                        getString(R.string.battery_full_title),
-                        getString(R.string.battery_full_summary)
-                );
+                startRepeatingFullAlert();
                 Utils.saveBoolean("isFullAlertSent", true, this);
                 return true;
             }
         } else if (isFullAlertSent) {
+            stopRepeatingAlert();
             Utils.saveBoolean("isFullAlertSent", false, this);
             notificationManager.cancel(NOTIFICATION_ID_FULL);
             return false;
@@ -320,21 +335,92 @@ public class BatteryMonitorService extends Service {
         boolean isLow = percent <= Battery.getLowBatteryThreshold(this);
         if (isLow && !isPowerConnected) {
             if (!isLowAlertSent) {
+                startRepeatingLowAlert(percent);
+                Utils.saveBoolean("isLowAlertSent", true, this);
+                return true;
+            }
+        } else if (isLowAlertSent) {
+            stopRepeatingAlert();
+            Utils.saveBoolean("isLowAlertSent", false, this);
+            notificationManager.cancel(NOTIFICATION_ID_LOW);
+            return false;
+        }
+        return isLowAlertSent;
+    }
+
+    private boolean isNotificationVisible(int notificationId) {
+        if (notificationManager == null) return false;
+        for (StatusBarNotification sbn : notificationManager.getActiveNotifications()) {
+            if (sbn.getId() == notificationId) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void stopRepeatingAlert() {
+        if (repeatAlertRunnable != null) {
+            alertHandler.removeCallbacks(repeatAlertRunnable);
+            repeatAlertRunnable = null;
+        }
+    }
+
+    private void startRepeatingFullAlert() {
+        stopRepeatingAlert();
+
+        repeatAlertRunnable = new Runnable() {
+            int count = 0;
+
+            @Override
+            public void run() {
+                if (count > 0 && !isNotificationVisible(NOTIFICATION_ID_FULL)) {
+                    return;
+                }
+
+                postAlertNotification(
+                        NOTIFICATION_ID_FULL,
+                        R.drawable.ic_battery_full,
+                        getString(R.string.battery_full_title),
+                        getString(R.string.battery_full_summary)
+                );
+
+                count++;
+                if (count < 3) {
+                    alertHandler.postDelayed(this, 15000L);
+                }
+            }
+        };
+
+        alertHandler.post(repeatAlertRunnable);
+    }
+
+    private void startRepeatingLowAlert(int percent) {
+        stopRepeatingAlert();
+
+        repeatAlertRunnable = new Runnable() {
+            int count = 0;
+
+            @Override
+            public void run() {
+                if (count > 0 && !isNotificationVisible(NOTIFICATION_ID_LOW)) {
+                    return;
+                }
+
                 postAlertNotification(
                         NOTIFICATION_ID_LOW,
                         R.drawable.ic_battery_alert,
                         getString(R.string.battery_low_title, percent + "%"),
                         getString(R.string.battery_low_summary)
                 );
-                Utils.saveBoolean("isLowAlertSent", true, this);
-                return true;
+
+                count++;
+                if (count < 3) {
+                    alertHandler.postDelayed(this, 15000L);
+                }
             }
-        } else if (isLowAlertSent) {
-            Utils.saveBoolean("isLowAlertSent", false, this);
-            notificationManager.cancel(NOTIFICATION_ID_LOW);
-            return false;
-        }
-        return isLowAlertSent;
+        };
+
+        alertHandler.post(repeatAlertRunnable);
     }
 
 }

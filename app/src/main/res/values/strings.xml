@@ -10,6 +10,8 @@
     <string name="apply">Apply</string>
     <string name="battery_full_summary">Unplug your charger to preserve battery health.</string>
     <string name="battery_full_title">Battery Fully Charged</string>
+    <string name="battery_high_threshold">High battery threshold</string>
+    <string name="battery_high_threshold_description">Alerts when battery reaches %s while charging. Tap here to modify.</string>
     <string name="battery_level">Battery level</string>
     <string name="battery_low_summary">Connect charger to prevent device shutdown.</string>
     <string name="battery_low_threshold">Low battery threshold</string>

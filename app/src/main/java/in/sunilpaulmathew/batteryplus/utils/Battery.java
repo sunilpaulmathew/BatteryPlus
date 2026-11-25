@@ -195,6 +195,10 @@ public class Battery {
         return Utils.getInt("designCapacity", (int) Math.round(Battery.getDesignCapacity(context)), context);
     }
 
+    public static int getHighBatteryThreshold(Context context) {
+        return Utils.getInt("battery_high_threshold", 100, context);
+    }
+
     public static int getLowBatteryThreshold(Context context) {
         return Utils.getInt("battery_low_threshold", 15, context);
     }
