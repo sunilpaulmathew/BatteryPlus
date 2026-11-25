@@ -79,7 +79,7 @@ public class SettingsEntry implements Serializable {
         if (this.icon == R.drawable.ic_notification) {
             hexColor = dark ? "#9FA8DA" : "#3F51B5";
         } else if (this.icon == R.drawable.ic_on_boot) {
-            hexColor = dark ? "#81C784" : "#2E7D32";
+            hexColor = dark ? "#8AB4F8" : "#1967D2";
         } else if (this.icon == R.drawable.ic_github ||
                 this.icon == R.drawable.ic_theme) {
             hexColor = dark ? "#58A6FF" : "#0969DA";
@@ -94,7 +94,7 @@ public class SettingsEntry implements Serializable {
         } else if (this.icon == R.drawable.ic_charging_high) {
             hexColor = dark ? "#81C995" : "#137333";
         } else if (this.icon == R.drawable.ic_amoled_theme) {
-            hexColor = dark ? "#FFB74D" : "#BF360C";
+            hexColor = dark ? "#B39DDB" : "#5E35B1";
         } else if (this.icon == R.drawable.ic_translate) {
             hexColor = dark ? "#4DB6AC" : "#00796B";
         } else if (this.icon == R.mipmap.ic_launcher) {
