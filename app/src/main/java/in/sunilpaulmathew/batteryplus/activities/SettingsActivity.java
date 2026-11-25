@@ -54,7 +54,7 @@ public class SettingsActivity extends BaseActivity {
 
         adapter = new SettingsAdapter(getData(), (id) -> {
             switch (id) {
-                case 9:
+                case 10:
                     new PolicyDialog(this);
                     break;
                 case 7:
@@ -151,9 +151,10 @@ public class SettingsActivity extends BaseActivity {
         }
 
         mData.add(new SettingsEntry(getString(R.string.miscellaneous)));
-        mData.add(new SettingsEntry(8, R.drawable.ic_github, getString(R.string.source_code), getString(R.string.source_code_description), "https://github.com/sunilpaulmathew/BatteryPlus"));
-        mData.add(new SettingsEntry(9, R.drawable.ic_privacy, getString(R.string.privacy_policy), getString(R.string.privacy_policy_description)));
-        mData.add(new SettingsEntry(10, R.drawable.ic_email, getString(R.string.developer_contact), getString(R.string.developer_contact_description), "mailto:smartpack.org@gmail.com"));
+        mData.add(new SettingsEntry(8, R.drawable.ic_translate, getString(R.string.translations), getString(R.string.translations_description), "https://poeditor.com/join/project/gKeunSFFsL"));
+        mData.add(new SettingsEntry(9, R.drawable.ic_github, getString(R.string.source_code), getString(R.string.source_code_description), "https://github.com/sunilpaulmathew/BatteryPlus"));
+        mData.add(new SettingsEntry(10, R.drawable.ic_privacy, getString(R.string.privacy_policy), getString(R.string.privacy_policy_description)));
+        mData.add(new SettingsEntry(11, R.drawable.ic_email, getString(R.string.developer_contact), getString(R.string.developer_contact_description), "mailto:smartpack.org@gmail.com"));
         return mData;
     }
 

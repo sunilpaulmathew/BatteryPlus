@@ -93,6 +93,8 @@ public class SettingsEntry implements Serializable {
             hexColor = dark ? "#F28B82" : "#C5221F";
         } else if (this.icon == R.drawable.ic_amoled_theme) {
             hexColor = dark ? "#FFB74D" : "#BF360C";
+        } else if (this.icon == R.drawable.ic_translate) {
+            hexColor = dark ? "#4DB6AC" : "#00796B";
         } else if (this.icon == R.mipmap.ic_launcher) {
             return Integer.MIN_VALUE;
         } else {

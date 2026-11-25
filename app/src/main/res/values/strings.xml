@@ -79,6 +79,8 @@
     <string name="temperature_summary">Monitors the internal thermal state of the battery pack to help protect against overheating and preserve hardware lifespan. This value is pulled directly from the device\'s thermal sensors via system battery broadcast intents.</string>
     <string name="time_to_empty_summary">~%s left until next charge</string>
     <string name="time_to_full_charge_summary">~%s left until full charge</string>
+    <string name="translations">Translations</string>
+    <string name="translations_description">Contribute to the app\'s translation</string>
     <string name="user_interface">User interface</string>
     <string name="voltage">Voltage</string>
     <string name="voltage_summary">Indicates the electric potential difference powering your device\'s hardware, measured in volts (V). It naturally fluctuates up or down depending on the battery level and system load, and is read straight from system battery broadcasts.</string>

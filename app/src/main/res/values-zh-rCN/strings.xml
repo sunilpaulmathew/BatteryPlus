@@ -73,6 +73,8 @@
     <string name="temperature_summary">监测电池组的内部温度状态，以帮助防止过热并延长硬件使用寿命。该数值直接通过系统电池广播中的设备温度传感器获取。</string>
     <string name="time_to_empty_summary">距离下次充电还剩约 %s</string>
     <string name="time_to_full_charge_summary">距离充满还剩约 %s</string>
+    <string name="translations">"翻译"</string>
+    <string name="translations_description">"为本应用的翻译作出贡献"</string>
     <string name="user_interface">"用户界面"</string>
     <string name="voltage">电压</string>
     <string name="voltage_summary">表示为设备硬件供电的电势差，单位为伏特（V）。电压会根据电池电量和系统负载自然上下波动，并直接从系统电池广播中读取。</string>
