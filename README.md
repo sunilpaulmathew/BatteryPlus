@@ -35,6 +35,17 @@ Battery Plus is built with a strict **offline-first and privacy-focused** philos
 
 ---
 
+## 🌍 Translations
+
+Want to use **Battery Plus** in your language? Contributions are always welcome!
+
+- 📝 **Recommended:** [Join the POEditor project](https://poeditor.com/join/project/gKeunSFFsL) to translate directly in your browser.
+- 💻 **GitHub PR:** Copy [`strings.xml`](app/src/main/res/values/strings.xml) into `res/values-<lang>/strings.xml` and open a pull request.
+
+> **Note for translators:** Please keep placeholders like `%s` intact so dynamic values (such as battery percentages) display properly.
+
+---
+
 ## 📄 License
 
     Copyright (C) 2026 sunilpaulmathew <sunil.kde@gmail.com>
