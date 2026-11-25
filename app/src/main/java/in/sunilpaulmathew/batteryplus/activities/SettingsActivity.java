@@ -120,12 +120,16 @@ public class SettingsActivity extends BaseActivity {
             }
         });
 
-        recyclerView.setLayoutManager(new GridLayoutManager(this, getSpanCount()) {
+        GridLayoutManager layoutManager = new GridLayoutManager(this, getSpanCount());
+        layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override
-            public boolean supportsPredictiveItemAnimations() {
-                return false;
+            public int getSpanSize(int position) {
+                int currentSpanCount = layoutManager.getSpanCount();
+                int requestedSpan = (getData().get(position).getID() == 0) ? currentSpanCount : 1;
+                return Math.min(requestedSpan, currentSpanCount);
             }
         });
+        recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
     }
 
