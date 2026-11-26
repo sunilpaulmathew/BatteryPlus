@@ -3,6 +3,7 @@ package in.sunilpaulmathew.batteryplus.adapters;
 import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -159,7 +160,11 @@ public class SettingsAdapter extends RecyclerView.Adapter<SettingsAdapter.ViewHo
             if (settingsEntry.getUrl() != null) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse(settingsEntry.getUrl()));
-                view.getContext().startActivity(intent);
+                try {
+                    view.getContext().startActivity(intent);
+                } catch (ActivityNotFoundException e) {
+                    Utils.toast("No suitable app found...", view.getContext()).show();
+                }
             } else {
                 clickListener.onItemClick(settingsEntry.getID());
             }
