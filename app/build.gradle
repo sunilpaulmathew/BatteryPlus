@@ -3,6 +3,24 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        release {
+            def keystoreFile = file("signing_cert.p12")
+            if (keystoreFile.exists() && System.getenv("KEYSTORE_PASSWORD") != null) {
+                storeFile keystoreFile
+                storeType "PKCS12"
+                storePassword System.getenv("KEYSTORE_PASSWORD")
+                keyAlias System.getenv("KEY_ALIAS")
+                keyPassword System.getenv("KEY_PASSWORD")
+            }
+        }
+    }
+
+    dependenciesInfo {
+        includeInApk = false
+        includeInBundle = false
+    }
+
     namespace 'in.sunilpaulmathew.batteryplus'
     compileSdk {
         version = release(37)
@@ -23,6 +41,11 @@ android {
         release {
             optimization {
                 enable true
+            }
+            minifyEnabled true
+            shrinkResources true
+            if (file("signing_cert.p12").exists() && System.getenv("KEYSTORE_PASSWORD") != null) {
+                signingConfig signingConfigs.release
             }
         }
     }
