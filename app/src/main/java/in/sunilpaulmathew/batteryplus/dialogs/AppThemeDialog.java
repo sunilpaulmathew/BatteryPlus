@@ -1,6 +1,7 @@
 package in.sunilpaulmathew.batteryplus.dialogs;
 
 import android.content.Context;
+import android.content.DialogInterface;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -29,6 +30,7 @@ public abstract class AppThemeDialog extends MaterialAlertDialogBuilder {
                 context.getString(R.string.app_theme_light)
         }, currentTheme, null);
         setNeutralButton(R.string.cancel, null);
+        setOnDismissListener(DialogInterface::dismiss);
         setPositiveButton(R.string.apply, (dialog, id) -> {
             int selectedIndex = ((AlertDialog) dialog).getListView().getCheckedItemPosition();
             if (selectedIndex == currentTheme) return;

@@ -1,6 +1,7 @@
 package in.sunilpaulmathew.batteryplus.dialogs;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.text.InputType;
 import android.view.Gravity;
 import android.view.ViewGroup;
@@ -42,6 +43,7 @@ public abstract class InputValueDialog extends MaterialAlertDialogBuilder {
             }
         }
         setView(layout);
+        setOnDismissListener(DialogInterface::dismiss);
         setNeutralButton(R.string.cancel, (dialog, id) -> {
         });
         setPositiveButton(R.string.apply, (dialog, id) -> {

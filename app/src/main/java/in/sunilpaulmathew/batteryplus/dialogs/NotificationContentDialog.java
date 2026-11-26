@@ -1,6 +1,7 @@
 package in.sunilpaulmathew.batteryplus.dialogs;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -33,6 +34,7 @@ public class NotificationContentDialog extends MaterialAlertDialogBuilder {
         setIcon(getColoredIcon(context));
         setTitle(R.string.notification_content);
         setMultiChoiceItems(getNotificationOptions(context), checkedItems, (dialog, which, isChecked) -> checkedItems[which] = isChecked);
+        setOnDismissListener(DialogInterface::dismiss);
         setNeutralButton(android.R.string.cancel, null);
         setPositiveButton(R.string.apply, (dialog, which) -> {
             for (int i = 0; i < keys.length; i++) {
