@@ -30,8 +30,8 @@ android {
         applicationId "in.sunilpaulmathew.batteryplus"
         minSdk 26
         targetSdk 37
-        versionCode 5
-        versionName "beta-v0.5"
+        versionCode 6
+        versionName "v0.6"
     }
 
     buildTypes {

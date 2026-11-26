@@ -1,0 +1,5 @@
+* Customizable high-battery alert threshold with a new notification sound
+* Added app theme selector in Settings (including refined AMOLED Black styling)
+* Added POEditor translation link in Settings
+* Updated Apply on boot icon colors and fixed Settings title layout
+* Updated build tools
