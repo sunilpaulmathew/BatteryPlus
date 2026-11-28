@@ -8,12 +8,12 @@
     <string name="app_theme_dark">Темна</string>
     <string name="app_theme_light">Світла</string>
     <string name="apply">Застосувати</string>
-    <string name="battery_full_summary">Витягніть зарядку, щоб подовжити здоров'є акумулятора.</string>
+    <string name="battery_full_summary">Витягніть зарядку, щоб подовжити здоров\'є акумулятора.</string>
     <string name="battery_full_title">Акумулятор повністю заряджено</string>
     <string name="battery_high_threshold">Вищій поріг акумулятора</string>
     <string name="battery_high_threshold_description">Повідомляє, коли рівень акумулятора дійде %s під час заряджання. Натисніть тут, щоб змінити.</string>
     <string name="battery_level">Рівень акумялтора</string>
-    <string name="battery_low_summary">Під'єднайте зарядку, щоб запобігти вимкення пристрою.</string>
+    <string name="battery_low_summary">Під\'єднайте зарядку, щоб запобігти вимкення пристрою.</string>
     <string name="battery_low_threshold">Низький поріг акумулятора</string>
     <string name="battery_low_threshold_description">Повідомляти, коли рівень заряду акумулятора впаде нижче ніж %s. Натисніть, щоб змінити.</string>
     <string name="battery_low_title">"Низький заряд акумулятора (%s)"</string>
@@ -41,16 +41,16 @@
     <string name="charging_status_wireless">Безпровідне заряджання</string>
     <string name="copyright_text" translatable="false">Авторське право: © 2026 sunilpaulmathew</string>
     <string name="current">Напруга</string>
-    <string name="current_summary">Виміряє потік енергії у або із акумулятора, та визначається у міліамперах (мА). Додатні значення означають заряджання, а від'ємні - споживання. Ці дані отримується напряму від операційної системи.</string>
-    <string name="developer_contact">Зв'язатися з розробником</string>
-    <string name="developer_contact_description">Потрібна допомога чи э пропозиція? Зв'яжіться з розробником</string>
+    <string name="current_summary">Виміряє потік енергії у або із акумулятора, та визначається у міліамперах (мА). Додатні значення означають заряджання, а від\'ємні - споживання. Ці дані отримується напряму від операційної системи.</string>
+    <string name="developer_contact">Зв\'язатися з розробником</string>
+    <string name="developer_contact_description">Потрібна допомога чи э пропозиція? Зв\'яжіться з розробником</string>
     <string name="discharging">Розрядка</string>
     <string name="discharging_summary">Визначає, як довго ще протримається акумулятор, перед тим як пристрій вимкнеться. Це значення вираховується від постійного відстеження втрачання відсотків заряду, трохи округлення і множення поточного проценту на рівень споживання.</string>
     <string name="exit">Вийти</string>
     <string name="exit_confirmation_toast">Натисніть \"Назад\" ще раз, щоб вийти із додатку.</string>
     <string name="general">Загальні</string>
-    <string name="health">Здоров'я</string>
-    <string name="health_summary">Відображає загальний фізичний стан та стан деградації акумулятора (наприклад, Добре, Перегрів, Дохлий). Ця інформація читається напряму від стану здоров'я, яку надає операційна система.</string>
+    <string name="health">Здоров\'я</string>
+    <string name="health_summary">Відображає загальний фізичний стан та стан деградації акумулятора (наприклад, Добре, Перегрів, Дохлий). Ця інформація читається напряму від стану здоров\'я, яку надає операційна система.</string>
     <string name="initializing_Status">Ініціалізація моніторингу акумулятора…</string>
     <string name="miscellaneous">Різне</string>
     <string name="notification_content">Подробиці повідомлень</string>
@@ -58,7 +58,7 @@
     <string name="notification_start">Показувати постійне повідомлення</string>
     <string name="notification_start_description">Показувати у реальному часі параметри акумулятора у повідомленнях а також повідомляти коли батарея роздряжена або заряджена.</string>
     <string name="permission_denied_notification">Дозвіл на повідомлення було скасовано. Натисніть на кнопку ще раз, щоб спробувати знову, або увімкніть їх самостійно у налаштуваннях системи.</string>
-    <string name="permission_denied_title">Обов'язковий дозвіл</string>
+    <string name="permission_denied_title">Обов\'язковий дозвіл</string>
     <string name="power">Напруга</string>
     <string name="power_summary">Відображає загальне споживання енергії у ваттах (Вт) у реальному часі. Воно розраховується через помноження поточної напруги (конвертовану у ампери) на поточний вольтаж.</string>
     <string name="privacy_policy">Політика приватності</string>
