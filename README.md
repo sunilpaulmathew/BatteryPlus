@@ -2,6 +2,11 @@
 
 ![Battery Plus](Screenshot.png?raw=true)
 
+[![](https://img.shields.io/badge/Battery%20Plus-v0.7-green)](https://play.google.com/store/apps/details?id=in.sunilpaulmathew.batteryplus)
+![](https://img.shields.io/github/languages/top/sunilpaulmathew/BatteryPlus)
+![](https://img.shields.io/github/contributors/sunilpaulmathew/BatteryPlus)
+![](https://img.shields.io/github/license/sunilpaulmathew/BatteryPlus)
+
 Battery Plus is a lightweight, privacy-first Android utility designed to give you deep, real-time insights into your device's battery performance. Built with a native custom rendering engine and zero external charting dependencies, it tracks everything from instantaneous power draw to long-term capacity health without draining your battery.
 
 ---
@@ -18,11 +23,14 @@ Battery Plus is a lightweight, privacy-first Android utility designed to give yo
 
 ## 🚀 Getting Started
 
-Get it from [Google Play](https://play.google.com/store/apps/details?id=in.sunilpaulmathew.batteryplus) or download and install the pre-compiled APK directly from the [Releases](../../releases) page of this repository.
+Get it from [Google Play](https://play.google.com/store/apps/details?id=in.sunilpaulmathew.batteryplus), [IzzyOnDroid](https://apt.izzysoft.de/fdroid/index/apk/in.sunilpaulmathew.batteryplus) or download and install the pre-compiled APK directly from the [Releases](../../releases) page of this repository.
 
 [<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png"
 alt="Get it on Google Play"
 height="80">](https://play.google.com/store/apps/details?id=in.sunilpaulmathew.batteryplus)
+[<img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png"
+alt="Get it on IzzyOnDroid"
+height="80">](https://apt.izzysoft.de/fdroid/index/apk/in.sunilpaulmathew.batteryplus)
 
 ---
 

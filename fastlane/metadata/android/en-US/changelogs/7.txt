@@ -1,0 +1,3 @@
+* Improved displaying bottom sheet dialogues in landscape mode
+* Fixed a crash when opening links without a supported app installed
+* Added German, Russian, and Ukrainian translations
